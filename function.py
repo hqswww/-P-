@@ -1,3 +1,6 @@
+# function - By: Sakiri - Wed Mar 20 2024
+# version: 0.2
+
 import requests
 from lxml import etree
 from PIL import Image
