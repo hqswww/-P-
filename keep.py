@@ -23,7 +23,7 @@ import time as ti
 if __name__=='__main__':
     #获取用户输入|done|
     print('获取用户输入',end=' ')
-    user_data_dict=json.load(open('./user_data.json','r',encoding='utf-8'))
+    user_data_dict=json.load(open('./data/user_data.json','r',encoding='utf-8'))
     name=user_data_dict['user_name']
     school=user_data_dict['school']
     journey_srt=user_data_dict['journey']

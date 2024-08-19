@@ -7,7 +7,7 @@ from PIL import Image
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
-import time,os
+import time,os,sys
 # import win32file, pywintypes
 # import datetime
 
@@ -25,7 +25,11 @@ options.add_experimental_option("prefs", {
     "safebrowsing.enabled": True
 })
 #初始化浏览器,访问KEEpPro
-bro=webdriver.Edge(options=options)
+try:
+    bro=webdriver.Edge(options=options)
+except:
+    print('\n\033[91medge浏览器的版本与此脚本的驱动程序不兼容！\033[0m')
+    sys.exit(1)
 
 def cut_picture(bg,img,name):
     '''
