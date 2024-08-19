@@ -2,6 +2,8 @@
 # KEEP自动化脚本
 
 用于创建keep应用的跑步记录截图，适用于没有时间交作业的情况应急使用😘
+此脚本依赖于Edge浏览器及其网络驱动程序，需要与驱动程序适配的Edge浏览器。
+脚本运行是需要保持与互联网的连接
 ## 致谢
  - [KEEPro](https://tool.joytion.cn/keep/)
  - [天气使](https://www.tianqishi.com/)
