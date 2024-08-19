@@ -154,4 +154,4 @@ if __name__=='__main__':
         if target_char in filename:
             os.remove('./output/'+filename)
             print(f'删除临时图像{filename}')
-    print("\033[93m程序运行结束，请查看output下的文件  Ciallo~(∠・ω< )⌒☆\033[0m")
+    print("\033[93m程序运行结束，お幸せに。😚\033[0m")
