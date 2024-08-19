@@ -31,10 +31,15 @@ if modes == '0':
     school=input('输入学校名称(地名)：')
     times=input('创建图片张数：')
     mode=input('是否需要自动计算起点时间(\033[96m输入y or n\033[0m)')
-    if mode =='y':
-        start_time=input('请输入起点时间(年月日，例：2024-01-01)')
-    else:
-        start_time=0
+    while True:
+        if mode =='y':
+            start_time=input('请输入起点时间(年月日，例：2024-01-01)')
+            break
+        elif mode == 'n':
+            start_time=0
+            break
+        else:
+            print("错误输入,请重新输入")
     set_data(name,journey,speed,school,time,mode,start_time)
     print('保存用户配置成功 Ciallo~(∠・ω< )⌒☆ 按下任意键退出')
 
