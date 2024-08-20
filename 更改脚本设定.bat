@@ -21,6 +21,6 @@ chcp 65001
 ::运行keep.py
 echo 运行set_data.py......
 cd /d %~dp0
-python set_data.py
+python ./program/set_data.py
 
 pause

@@ -12,6 +12,6 @@ echo 运行keep.py......
 ::echo 为了脚本执行性能，请定时清理output下的图像()
 echo (如果长时间无法继续运行，请尝试下载相应的edge浏览器驱动，并覆盖旧驱动)
 cd /d %~dp0
-python keep.py
+python ./program/keep.py
 
 pause
