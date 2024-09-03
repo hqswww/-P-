@@ -10,7 +10,7 @@ echo 当前目录是：%MY_VAR%
 ::运行keep.py
 echo 运行keep.py......
 ::echo 为了脚本执行性能，请定时清理output下的图像()
-echo (如果长时间无法继续运行，请尝试下载相应的edge浏览器驱动，并覆盖旧驱动)
+echo (如果长时间无法继续运行，请尝试运行“安装最新的edge驱动程序”批处理文件)
 cd /d %~dp0
 python ./program/keep.py
 
