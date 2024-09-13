@@ -1,4 +1,4 @@
-# function - By: Sakiri - Wed Mar 20 2024
+# function.py - By: Sakiri - Wed Mar 20 2024
 # version: 0.2
 
 import requests

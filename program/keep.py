@@ -1,4 +1,4 @@
-# keep - By: Sakiri - Tue Mar 12 2024
+# keep.py - By: Sakiri - Tue Mar 12 2024
 # version: 0.2
 
 from function import cut_picture,get_weather,get_picture,close_browser,check_data

@@ -1,5 +1,5 @@
-# download - By: Sakiri - Tue Aug 20 2024
-# version: 0.1
+# download.py - By: Sakiri - Tue Aug 20 2024
+# version: 0.2
 
 import requests
 from lxml import etree

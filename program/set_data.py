@@ -1,5 +1,5 @@
-# set_data - By: Sakiri - Sat Mar 23 2024
-# version: 0.2
+# set_data.py - By: Sakiri - Sat Mar 23 2024
+# version: 0.3
 
 import json
 import sys
@@ -62,7 +62,7 @@ if __name__=='__main__':
 
         while True:
             if mode =='n':
-                start_time=input('请输入起点时间(年月日，例：2024-01-01)')
+                start_time=input('请输入起点日期(年月日，例：2024-01-01)')
                 break
             elif mode == 'y':
                 start_time=0
@@ -87,14 +87,44 @@ if __name__=='__main__':
             print('\n\033[96m当前的数据内容：\033[0m')
             #输出信息内容
             for key,value in dict.items(load_data):
-                print(key+':'+str(value))
+                if key == 'user_name':
+                    print(f'keep昵称:{str(value)}------------输入{key}来更改这个值')
+                elif key == 'school':
+                    print(f'\n学校名称:{str(value)}------------输入{key}来更改这个值')
+                elif key == 'journey':
+                    print(f'\n路程:{str(value)}------------输入{key}来更改这个值')
+                elif key == 'speed':
+                    print(f'\n配速:{str(value)}------------输入{key}来更改这个值')
+                elif key == 'time':
+                    print(f'\n跑步开始时间:{str(value)}------------输入{key}来更改这个值')
+                elif key == 'times':
+                    print(f'\n创建图像张数:{str(value)}------------输入{key}来更改这个值')
+                elif key == 'mode':
+                    mode_value=[key,value]
+                    if value=='y':
+                        print('\n当前自动计算起点日期',end=' ')
+                    else :
+                        print('\n当前关闭自动计算起点日期',end=' ')
+                    print('------------输入mode以开关这个设置')
             #修改内容
-            in_key=input('输入需要修改的数据：')
-            in_value=input('输入'+in_key+'的新值：')
-            load_data[in_key]=in_value
+            in_key=input('\n输入需要修改的数据：')
+            if in_key == 'mode':
+                if mode_value[1] == 'y':
+                    load_data[in_key]='n'
+                    in_value=input('起点日期(年-月-日格式):')
+                    load_data['start_time']=in_value
+                    print('自动计算起点日期已关闭')
+                else :
+                    load_data[in_key]='y'
+                    load_data['start_time']=0
+                    print('自动计算起点日期已打开')
+            else :
+                in_value=input('输入'+in_key+'的新值：')
+                load_data[in_key]=in_value
+
             #保存修改
-            with open("./data/user_data.json",'w',encoding='utf-8') as f:
-                json.dump(load_data,f,ensure_ascii=False)
             i=input('保存成功,输入\033[91m1\033[0m以退出修改脚本,输入\033[91m0\033[0m则继续修改内容\n')
             i=int(i)
+        with open("./data/user_data.json",'w',encoding='utf-8') as f:
+            json.dump(load_data,f,ensure_ascii=False)
         print('保存用户配置成功 Ciallo~(∠・ω< )⌒☆ 按下任意键退出')
